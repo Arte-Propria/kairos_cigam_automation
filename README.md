@@ -106,6 +106,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 Estrutura inicial do projeto:
 
+`txt`
 kairos-cigam-integration
 │
 ├── src
@@ -130,6 +131,7 @@ kairos-cigam-integration
 ├── .gitignore
 │
 └── README.md
+`txt`
 
 
 ---
@@ -137,7 +139,7 @@ kairos-cigam-integration
 # 🔄 Fluxo da Automação
 
 O fluxo de funcionamento da automação será:
-
+`txt`
 Kairos API
 │
 │
@@ -155,6 +157,7 @@ Pasta de Integração
 │
 ▼
 CIGAM
+`txt`
 
 
 ---
