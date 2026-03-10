@@ -1,0 +1,14 @@
+-PASSOS PARA SUBIR NO GITHUB-
+
+1 - Crie um diretório/projeto no GitHub
+2 - Na sua pasta em seu computador local: [Shift] + (botão direito do mouse) e clique em "Abrir no terminal"
+3 - (Se for o primeiro commit) Digite "git init" para começar a preparar os arquivos para subir
+4 - Digite "git add ." (vc pode trocar o '.' por algum arquivo único que vc queira subir individualmente)
+5 - Digite 'git commit -m "[descrição para o seu commit]" '
+6 - (Se for o primeiro commit) Digite "git remote add origin [link do diretório do GitHub no projeto criado no passo 1].git"
+7 - Digite "git push -u origin main"
+
+-PASSOS PARA PUXAR DO GITHUB-
+
+1 - Na sua pasta em seu computador local aonde deseja salvar o projeto: Digite "git clone [diretório do projeto que vc quer clonar do GitHub para o seu pc].git" 
+
