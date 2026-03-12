@@ -11,7 +11,9 @@ class PeopleService:
             "ResponseType": "AS400V1"
         }
 
-        return self.client.post(
+        response = self.client.post(
             "People/SearchPeople",
             payload
         )
+
+        return response["Obj"]

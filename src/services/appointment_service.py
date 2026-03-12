@@ -21,14 +21,25 @@ class AppointmentService:
             payload
         )
 
-        return response["Obj"]
+        return response.get("Obj") or []
 
-    def gerar_linhas(self, appointments):
+    def gerar_linhas(self, appointments, cpf):
 
         linhas = []
 
+        appointments = sorted(
+        appointments,
+        key=lambda x: (
+            x["Ano"],
+            x["Mes"],
+            x["Dia"],
+            x["Hora"],
+            x["Minuto"]
+        )
+    )
+
         for ap in appointments:
-            linha = formatar_batimento(ap)
+            linha = formatar_batimento(ap, cpf)
             linhas.append(linha)
 
         return linhas
