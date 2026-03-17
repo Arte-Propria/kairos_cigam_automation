@@ -5,12 +5,12 @@ def formatar_batimento(ap, cpf):
     id_apont = str(ap["IdApont"]).zfill(9)
 
     data = datetime(
-        ap["AnoColeta"],
-        ap["MesColeta"],
-        ap["DiaColeta"],
-        ap["HoraColeta"],
-        ap["MinutoColeta"],
-        ap["SegundoColeta"]
+        ap["Ano"],
+        ap["Mes"],
+        ap["Dia"],
+        ap["Hora"],
+        ap["Minuto"],
+        ap["SegundoColeta"]  # pode manter segundos da coleta
     )
 
     data_sem_seg = data.strftime("%Y-%m-%dT%H:%M:00")
