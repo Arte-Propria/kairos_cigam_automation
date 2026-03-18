@@ -12,8 +12,8 @@ import time
 current_datetime = datetime.datetime.now()
 
 MES_ANTERIOR = current_datetime - relativedelta(months=1)
-DATA_INICIO = MES_ANTERIOR.strftime("20-%m-%Y") # PEGA SEMPRE O DIA 20 DO MÊS ANTERIOR (20 = dia de fechamento) - 1 MES
-DATA_FIM = current_datetime.strftime("20-%m-%Y") # PEGA SEMPRE O DIA 20 DO MÊS ATUAL (20 = dia de fechamento)
+DATA_INICIO = MES_ANTERIOR.strftime("24-%m-%Y") # PEGA SEMPRE O DIA 20 DO MÊS ANTERIOR (20 = dia de fechamento) - 1 MES
+DATA_FIM = current_datetime.strftime("23-%m-%Y") # PEGA SEMPRE O DIA 20 DO MÊS ATUAL (20 = dia de fechamento)
 
 
 
@@ -21,7 +21,7 @@ def main():
 
     print(f"\nProcesso iniciado - {current_datetime.strftime("%H:%M:%S")}")
 
-    if current_datetime != current_datetime.strftime("21-%m-%Y"):   # RODARÁ APENAS NO DIA 21 (UM DIA DEPOIS DO FECHAMENTO PARA PEGAR O MES FECHADO)
+    if current_datetime != current_datetime.strftime("24-%m-%Y"):   # RODARÁ APENAS NO DIA 21 (UM DIA DEPOIS DO FECHAMENTO PARA PEGAR O MES FECHADO)
         print(f"\nHoje não é dia de execução - {current_datetime.strftime("%H:%M:%S")}")
 
     else:
