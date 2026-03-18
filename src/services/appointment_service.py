@@ -22,23 +22,33 @@ class AppointmentService:
         )
 
         return response.get("Obj") or []
+    
 
     def gerar_linhas(self, appointments, cpf):
 
         linhas = []
 
-        appointments = sorted(
-        appointments,
-        key=lambda x: (
-            x["Ano"],
-            x["Mes"],
-            x["Dia"],
-            x["Hora"],
-            x["Minuto"]
-        )
-    )
+        # 🔹 Filtra apenas batimentos válidos
+        appointments_filtrados = [
+            ap for ap in appointments if not ap.get("Indevido", False)
+        ]
 
-        for ap in appointments:
+        if appointments_filtrados:
+            print(f"[WARNING] {len(appointments_filtrados)} batimentos indevidos ignorados para CPF {cpf}")
+
+        # 🔹 Ordena os válidos
+        appointments_ordenados = sorted(
+            appointments_filtrados,
+            key=lambda x: (
+                x["Ano"],
+                x["Mes"],
+                x["Dia"],
+                x["Hora"],
+                x["Minuto"]
+            )
+        )
+
+        for ap in appointments_ordenados:
             linha = formatar_batimento(ap, cpf)
             linhas.append(linha)
 
